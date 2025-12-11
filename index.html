@@ -13,8 +13,16 @@
       </section>
       <section class="input-group half-box">
         <div class="input-group">
-          <input type="number" id="tipPercent" placeholder=" " />
-          <label for="tipPercent">Tip Percentage</label>
+          <div class="carousel-picker" id="tipPercentPicker">
+            <div class="carousel-container">
+              <div class="carousel-item" data-value="10">10%</div>
+              <div class="carousel-item" data-value="15">15%</div>
+              <div class="carousel-item active" data-value="18">18%</div>
+              <div class="carousel-item" data-value="20">20%</div>
+              <div class="carousel-item" data-value="22">22%</div>
+              <div class="carousel-item" data-value="25">25%</div>
+            </div>
+          </div>
         </div>
         <div class="input-group">
           <input type="number" id="tipAmount" placeholder=" " readonly />
@@ -23,8 +31,18 @@
       </section>
       <section class="input-group half-box">
         <div class="input-group">
-          <input type="number" id="numPeople" placeholder=" " />
-          <label for="numPeople">Number of People</label>
+          <div class="carousel-picker" id="numPeoplePicker">
+            <div class="carousel-container">
+              <div class="carousel-item active" data-value="1">1</div>
+              <div class="carousel-item" data-value="2">2</div>
+              <div class="carousel-item" data-value="3">3</div>
+              <div class="carousel-item" data-value="4">4</div>
+              <div class="carousel-item" data-value="5">5</div>
+              <div class="carousel-item" data-value="6">6</div>
+              <div class="carousel-item" data-value="7">7</div>
+              <div class="carousel-item" data-value="8">8</div>
+            </div>
+          </div>
         </div>
         <div class="input-group">
           <input type="number" id="amountPerson" placeholder=" " readonly />
