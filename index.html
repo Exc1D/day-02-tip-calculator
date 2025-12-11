@@ -8,34 +8,41 @@
   <body>
     <main class="card-container">
       <section class="input-group">
-        <input type="number" id="billAmount" placeholder=" " />
         <label for="billAmount">Bill Amount</label>
+        <input type="number" id="billAmount" placeholder="0.00" />
       </section>
-      <section class="input-group half-box">
+      
+      <section class="half-box">
         <div class="input-group">
-          <input type="number" id="tipPercent" placeholder=" " />
-          <label for="tipPercent">Tip Percentage</label>
+          <label>Tip: <span id="tipDisplay">15</span>%</label>
+          <input type="range" id="tipSlider" min="0" max="30" value="15" />
         </div>
         <div class="input-group">
-          <input type="number" id="tipAmount" placeholder=" " readonly />
           <label for="tipAmount">Tip Amount</label>
+          <input type="number" id="tipAmount" placeholder="0.00" readonly />
         </div>
       </section>
-      <section class="input-group half-box">
+      
+      <section class="half-box">
         <div class="input-group">
-          <input type="number" id="numPeople" placeholder=" " />
-          <label for="numPeople">Number of People</label>
+          <label>Split: <span id="splitDisplay">2</span> people</label>
+          <input type="range" id="splitSlider" min="1" max="10" value="2" />
         </div>
         <div class="input-group">
-          <input type="number" id="amountPerson" placeholder=" " readonly />
           <label for="amountPerson">Amount Per Person</label>
+          <input type="number" id="amountPerson" placeholder="0.00" readonly />
         </div>
       </section>
-      <section class="input-group">
-        <input type="number" id="totalBill" placeholder=" " readonly />
+      
+      <section class="input-group total-bill-group">
         <label for="totalBill">Total Bill</label>
+        <div class="input-with-reset">
+          <input type="number" id="totalBill" placeholder="0.00" readonly />
+          <button type="button" id="resetBtn" class="reset-btn">Reset</button>
+        </div>
       </section>
     </main>
+    <canvas id="confettiCanvas"></canvas>
     <script src="script.js"></script>
   </body>
 </html>
