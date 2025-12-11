@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #d0d0d0;
+  --background-accent-color: #ffffff;
+  --text-color: #333;
+  --font-s: 1rem;
+  --secondary-color: #ffffff;
+  --accent-color: #007bff;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: var(--background-accent-color);
+  border-radius: 1rem;
+}
+
+.half-box {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.half-box .input-group {
+  flex: 1;
+}
+
+/* floating label effect */
+.input-group {
+  position: relative;
+  width: 75%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem 0.75rem 0.5rem;
+  font-size: var(--font-s);
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: var(--secondary-color);
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--accent-color);
+}
+
+.input-group input[readonly] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  color: #777;
+  pointer-events: none;
+  transition: 0.25s ease;
+  background: var(--secondary-color);
+  padding: 0 0.25rem;
+}
+
+/* When input is focused OR has value, float label */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  color: var(--accent-color);
+  background: var(--secondary-color);
+}

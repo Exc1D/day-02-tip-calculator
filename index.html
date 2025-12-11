@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card-container">
+      <section class="input-group">
+        <input type="number" id="billAmount" placeholder=" " />
+        <label for="billAmount">Bill Amount</label>
+      </section>
+      <section class="input-group half-box">
+        <div class="input-group">
+          <input type="number" id="tipPercent" placeholder=" " />
+          <label for="tipPercent">Tip Percentage</label>
+        </div>
+        <div class="input-group">
+          <input type="number" id="tipAmount" placeholder=" " readonly />
+          <label for="tipAmount">Tip Amount</label>
+        </div>
+      </section>
+      <section class="input-group half-box">
+        <div class="input-group">
+          <input type="number" id="numPeople" placeholder=" " />
+          <label for="numPeople">Number of People</label>
+        </div>
+        <div class="input-group">
+          <input type="number" id="amountPerson" placeholder=" " readonly />
+          <label for="amountPerson">Amount Per Person</label>
+        </div>
+      </section>
+      <section class="input-group">
+        <input type="number" id="totalBill" placeholder=" " readonly />
+        <label for="totalBill">Total Bill</label>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
