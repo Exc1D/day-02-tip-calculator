@@ -103,21 +103,20 @@ function animateConfetti() {
 
 function triggerConfetti(percentage) {
   let intensity;
-  if (percentage >= 30) {
-    intensity = 150; // Maximum confetti
+  if (percentage === 30) {
+    intensity = 150;
     createConfetti(intensity);
-    // Add extra burst after a short delay
-    setTimeout(() => createConfetti(intensity / 2), 200);
-    setTimeout(() => createConfetti(intensity / 3), 400);
-  } else if (percentage >= 25) {
-    intensity = 100; // Lots of confetti
+    setTimeout(() => createConfetti(75), 200);
+    setTimeout(() => createConfetti(50), 400);
+  } else if (percentage === 25) {
+    intensity = 100;
     createConfetti(intensity);
-  } else if (percentage >= 20) {
-    intensity = 50; // Moderate confetti
+  } else if (percentage === 20) {
+    intensity = 50;
     createConfetti(intensity);
   }
   
-  if (intensity && confettiParticles.length === 0) {
+  if (intensity) {
     animateConfetti();
   }
 }
@@ -153,11 +152,11 @@ tipSlider.addEventListener("input", (e) => {
   tipDisplay.textContent = e.target.value;
   
   // Trigger confetti when reaching thresholds
-  if (newTipPercent >= 20 && lastTipPercent < 20) {
+  if (newTipPercent === 20 && lastTipPercent !== 20) {
     triggerConfetti(20);
-  } else if (newTipPercent >= 25 && lastTipPercent < 25) {
+  } else if (newTipPercent === 25 && lastTipPercent !== 25) {
     triggerConfetti(25);
-  } else if (newTipPercent >= 30 && lastTipPercent < 30) {
+  } else if (newTipPercent === 30 && lastTipPercent !== 30) {
     triggerConfetti(30);
   }
   

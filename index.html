@@ -7,11 +7,11 @@
   </head>
   <body>
     <main class="card-container">
-      <section class="input-group">
+      <section class="input-group floating-label">
+        <input type="number" id="billAmount" placeholder=" " />
         <label for="billAmount">Bill Amount</label>
-        <input type="number" id="billAmount" placeholder="0.00" />
       </section>
-      
+
       <section class="half-box">
         <div class="input-group">
           <label>Tip: <span id="tipDisplay">15</span>%</label>
@@ -22,7 +22,7 @@
           <input type="number" id="tipAmount" placeholder="0.00" readonly />
         </div>
       </section>
-      
+
       <section class="half-box">
         <div class="input-group">
           <label>Split: <span id="splitDisplay">2</span> people</label>
@@ -33,11 +33,11 @@
           <input type="number" id="amountPerson" placeholder="0.00" readonly />
         </div>
       </section>
-      
-      <section class="input-group total-bill-group">
-        <label for="totalBill">Total Bill</label>
+
+      <section class="input-group floating-label total-bill-group">
         <div class="input-with-reset">
-          <input type="number" id="totalBill" placeholder="0.00" readonly />
+          <input type="number" id="totalBill" placeholder=" " readonly />
+          <label for="totalBill">Total Bill</label>
           <button type="button" id="resetBtn" class="reset-btn">Reset</button>
         </div>
       </section>

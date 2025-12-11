@@ -16,13 +16,15 @@
   --border-color: #e2e8f0;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
   --radius: 0.75rem;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: var(--text-color);
   display: flex;
@@ -71,6 +73,7 @@ body {
   outline: none;
   transition: all 0.2s ease;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .input-group input::-webkit-outer-spin-button,
@@ -79,8 +82,9 @@ body {
   margin: 0;
 }
 
-.input-group input[type=number] {
+.input-group input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .input-group input:focus {
@@ -104,6 +108,41 @@ body {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.025em;
+}
+
+/* Floating label styles */
+.input-group.floating-label {
+  width: 100%;
+}
+
+.input-group.floating-label input {
+  padding: 1rem 0.5rem 0.5rem;
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem;
+}
+
+.input-group.floating-label label {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  color: #777;
+  pointer-events: none;
+  transition: 0.25s ease;
+  background: var(--secondary-color);
+  padding: 0 0.25rem;
+  margin-bottom: 0;
+  text-transform: none;
+  font-weight: 400;
+  font-size: var(--font-s);
+  letter-spacing: normal;
+}
+
+.input-group.floating-label input:focus + label,
+.input-group.floating-label input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  color: var(--accent-color);
 }
 
 /* Range slider styling */
@@ -163,22 +202,58 @@ body {
 }
 
 .input-group input[type="range"] + label {
-  position: static;
-  transform: none;
-  top: auto;
-  left: auto;
-  background: transparent;
-  padding: 0;
-  color: var(--text-color);
-  pointer-events: auto;
-  margin-bottom: 0.5rem;
-  display: block;
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  background: transparent !important;
+  padding: 0 !important;
+  color: var(--text-color) !important;
+  pointer-events: auto !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.025em !important;
 }
 
 .input-with-reset {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.total-bill-group .input-with-reset {
+  width: 100%;
+}
+
+.total-bill-group.floating-label {
+  width: 100%;
+}
+
+.total-bill-group .input-with-reset label {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  color: #777;
+  pointer-events: none;
+  transition: 0.25s ease;
+  background: var(--secondary-color);
+  padding: 0 0.25rem;
+  margin-bottom: 0;
+  text-transform: none;
+  font-weight: 400;
+  font-size: var(--font-s);
+  letter-spacing: normal;
+}
+
+.total-bill-group .input-with-reset input:focus + label,
+.total-bill-group .input-with-reset input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  color: var(--accent-color);
 }
 
 .reset-btn {
@@ -207,6 +282,12 @@ body {
 
 .input-with-reset input {
   flex: 1;
+}
+
+.total-bill-group .input-with-reset input {
+  padding: 1rem 0.5rem 0.5rem;
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem;
 }
 
 /* Confetti Canvas */
