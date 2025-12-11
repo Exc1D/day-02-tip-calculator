@@ -48,7 +48,6 @@ body {
 .input-group {
   position: relative;
   width: 75%;
-  background: transparent;
 }
 
 .input-group input {
@@ -68,47 +67,6 @@ body {
 .input-group input[readonly] {
   background-color: #f8f9fa;
   cursor: not-allowed;
-}
-
-.carousel-picker {
-  width: 100%;
-  height: 60px;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  background: var(--secondary-color);
-  position: relative;
-}
-
-.carousel-container {
-  display: flex;
-  height: 100%;
-  transition: transform 0.3s ease;
-  align-items: center;
-}
-
-.carousel-item {
-  min-width: 60px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0.5;
-}
-
-.carousel-item.active {
-  opacity: 1;
-  font-weight: bold;
-  color: var(--accent-color);
-  transform: scale(1.1);
-}
-
-.carousel-picker:focus {
-  border-color: var(--accent-color);
-  outline: none;
 }
 
 .input-group label {
